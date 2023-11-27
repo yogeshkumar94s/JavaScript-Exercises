@@ -1,0 +1,73 @@
+<!-- In web development, events and DOM nodes are closely connected. Events are interactions or occurrences that happen in the browser, triggered by users, scripts, or the browser itself. DOM nodes represent elements in the Document Object Model (DOM), which is a tree-like representation of the structure of an HTML or XML document. -->
+
+<!-- When events occur, they are associated with specific DOM nodes, and event handlers can be attached to these nodes to respond to the events. Let's explore how events and DOM nodes are related: -->
+
+<!-- Attaching Event Handlers to DOM Nodes: -->
+
+<!-- You can attach event handlers to DOM nodes to respond to specific events. This is typically done using methods like addEventListener: -->
+
+<button id="myButton">Click me</button>
+
+<script>
+  const button = document.getElementById('myButton');
+
+  // Attaching a click event handler to the button
+  button.addEventListener('click', function() {
+    alert('Button clicked!');
+  });
+</script>
+
+<!-- In this example, a click event handler is attached to the button element. When the button is clicked, the specified function is executed. -->
+
+<!-- Event Object and Target Node: -->
+
+<!-- When an event occurs, an event object is automatically created and passed to the event handler. This object contains information about the event, such as the type of event, the target element, and other details. The target element is the DOM node to which the event is originally dispatched. -->
+
+<button id="myButton">Click me</button>
+
+<script>
+  const button1 = document.getElementById('myButton');
+
+  button1.addEventListener('click', function(event) {
+    // Accessing the target element and event type
+    console.log('Target element:', event.target);
+    console.log('Event type:', event.type);
+  });
+</script>
+
+<!-- Event Bubbling and Capturing: -->
+
+<!-- Events in the DOM follow a process known as event propagation. When an event occurs on a particular DOM node, it can either propagate down to its descendants (capturing phase) or bubble up from its descendants to the root of the document (bubbling phase). -->
+
+<div id="parent">
+    <button id="child">Click me</button>
+  </div>
+  
+  <script>
+    const parent = document.getElementById('parent');
+    const child = document.getElementById('child');
+  
+    parent.addEventListener('click', function() {
+      console.log('Parent clicked!');
+    }, true); // 'true' enables capturing phase
+  
+    child.addEventListener('click', function() {
+      console.log('Child clicked!');
+    });
+  </script>
+  
+  <!-- In this example, the capturing phase is enabled for the parent element. When the button is clicked, the event first goes through the capturing phase (from the root to the target) and then enters the bubbling phase (from the target back to the root). -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

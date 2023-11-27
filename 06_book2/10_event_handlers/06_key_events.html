@@ -1,0 +1,47 @@
+Key events in JavaScript correspond to interactions with the keyboard. These events are triggered when a user presses, releases, or holds down a key. Common key events include:
+
+keydown: Triggered when a key is pressed down.
+keyup: Triggered when a key is released.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Events</title>
+</head>
+<body>
+
+  <input type="text" id="myInput" placeholder="Type something">
+
+  <script>
+    const input = document.getElementById('myInput');
+
+    input.addEventListener('keydown', function(event) {
+      // Log information about the keydown event
+      console.log('Keydown event - Key pressed:', event.key);
+      console.log('Key code:', event.keyCode);
+      console.log('Ctrl key:', event.ctrlKey);
+      console.log('Shift key:', event.shiftKey);
+      console.log('Alt key:', event.altKey);
+    });
+
+    input.addEventListener('keyup', function(event) {
+      // Log information about the keyup event
+      console.log('Keyup event - Key released:', event.key);
+    });
+  </script>
+
+</body>
+</html>
+
+The HTML document contains an input element (<input type="text" id="myInput" placeholder="Type something">).
+
+JavaScript code adds event listeners for both keydown and keyup events on the input element.
+
+When a key is pressed (keydown), information about the key, key code, and modifier keys (Ctrl, Shift, Alt) is logged to the console.
+
+When a key is released (keyup), information about the released key is logged to the console.
+
+Key codes provide numeric representations of keys and are used for cross-browser compatibility. Note that the keyCode property is deprecated, and the key property is preferred for identifying the pressed key. The event.key property returns a string representing the key value.
+

@@ -1,0 +1,45 @@
+<!-- Attributes are additional information or properties that you can assign to HTML elements. They provide extra details about the element, influencing its behavior or appearance. In JavaScript, you can access and manipulate these attributes using the DOM (Document Object Model) API.  -->
+
+<!-- Accessing Attributes: -->
+
+<!-- You can access attributes of an HTML element using properties or methods provided by the DOM. Commonly used methods include getAttribute and accessing properties directly. -->
+
+<!-- Using getAttribute: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessing Attributes</title>
+</head>
+<body>
+
+  <div id="exampleDiv" class="exampleClass" data-info="some data">This is a div element.</div>
+
+  <script>
+    // Accessing attributes using getAttribute method
+    const divElement = document.getElementById('exampleDiv');
+    const classAttribute = divElement.getAttribute('class');
+    const dataAttribute = divElement.getAttribute('data-info');
+
+    console.log('Class Attribute:', classAttribute);
+    console.log('Data Attribute:', dataAttribute);
+  </script>
+
+</body>
+</html>
+
+
+<!-- Common Attributes: -->
+class: Specifies one or more class names for an element.
+id: Specifies a unique id for an element.
+src: Specifies the source URL of an embedded content like an image or a script.
+href: Specifies the URL of a linked resource.
+alt: Provides alternative text for images.
+data-*: Custom data attributes used to store private data private to the page or application.
+
+
+
+
+

@@ -1,0 +1,80 @@
+<!-- // Basic DOM Tree Structure: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Tree</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the DOM Tree</h1>
+  </header>
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>This is a brief description of the DOM tree.</p>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <p>You can reach us at <a href="mailto:info@example.com">info@example.com</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 DOM Tree. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+<!-- Corresponding DOM Tree: -->
+
+Document
+└── html
+    ├── DocumentType
+    ├── head
+    │   ├── meta
+    │   │   ├── @charset
+    │   │   └── @name
+    │   └── title
+    │       └── text
+    └── body
+        ├── header
+        │   └── h1
+        │       └── text
+        ├── main
+        │   ├── section
+        │   │   ├── h2
+        │   │   └── p
+        │   └── section
+        │       ├── h2
+        │       ├── p
+        │       └── a
+        │           └── text
+        └── footer
+            └── p
+                └── text
+
+<!-- Key Nodes in the DOM Tree: -->
+
+<!-- Document: The root of the DOM tree, representing the entire document.
+
+Element Nodes: Nodes representing HTML elements, such as html, head, body, h1, p, etc.
+
+Attribute Nodes: Nodes representing attributes of elements, such as lang, charset, name, href, etc.
+
+Text Nodes: Nodes representing the text content within elements.
+
+
+Interacting with the DOM:
+JavaScript can be used to interact with the DOM tree dynamically. Common operations include:
+
+Accessing and modifying element content and attributes.
+
+Adding or removing elements.
+
+Responding to user events.
+
+Example using JavaScript: -->
+

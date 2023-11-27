@@ -1,0 +1,56 @@
+Scroll events in JavaScript are triggered when the user scrolls a webpage. These events can be useful for implementing features that respond to the user's scrolling behavior, such as lazy loading of content, sticky navigation, or animations.
+
+There are two main types of scroll events:
+
+scroll: Triggered continuously as the user scrolls. This event is suitable for actions that need to be performed during the scrolling process.
+
+wheel: Triggered when the user rotates the mouse wheel or uses a touchpad gesture. This event provides information about the wheel movement, allowing you to respond to the scrolling intensity.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Events</title>
+  <style>
+    body {
+      height: 200vh; /* Make the body taller for scrolling */
+    }
+    #scrollMessage {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: lightblue;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scrollMessage">Scrolling...</div>
+
+  <script>
+    const scrollMessage = document.getElementById('scrollMessage');
+
+    // Scroll event
+    window.addEventListener('scroll', function() {
+      // Update the message on each scroll event
+      scrollMessage.textContent = 'Scrolling...';
+    });
+
+    // Wheel event
+    window.addEventListener('wheel', function(event) {
+      // Update the message with information about the wheel movement
+      scrollMessage.textContent = `Wheel movement: ${event.deltaY > 0 ? 'down' : 'up'}`;
+    });
+  </script>
+
+</body>
+</html>
+
+
+The scroll event is used to continuously update a message indicating that the user is scrolling.
+
+The wheel event is used to update the message with information about the direction of the wheel movement.
+
+

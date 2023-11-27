@@ -1,0 +1,46 @@
+<!-- Event objects in JavaScript represent the occurrence of an event in the browser. When an event occurs, such as a click, keypress, or mouse movement, the browser creates an event object that contains information about the event. This object is automatically passed to the event handler function, allowing you to access details about the event and perform specific actions based on that information. -->
+
+<!-- Common Properties: -->
+
+<!-- type: A string that specifies the type of the event (e.g., "click", "keydown", "mouseover").
+
+target: The DOM element that triggered the event. This is the element on which the event originally occurred.
+
+currentTarget: The current DOM element within the event bubbling or capturing phase.
+
+eventPhase: Indicates the phase of the event flow (1 for capturing phase, 2 for target phase, 3 for bubbling phase).
+
+bubbles: A boolean indicating whether the event bubbles up through the DOM or not.
+
+cancelable: A boolean indicating whether the event is cancelable (i.e., whether the default action can be prevented).
+
+Common Methods:
+
+preventDefault(): Cancels the default action of the event if it is cancelable, such as preventing a form submission or a link click.
+
+stopPropagation(): Prevents further propagation of the current event in the capturing and bubbling phases.
+
+stopImmediatePropagation(): Prevents other listeners of the same event from being called. -->
+
+<button id="myButton">Click me</button>
+
+<script>
+  const button = document.getElementById('myButton');
+
+  button.addEventListener('click', function(event) {
+    // Accessing properties of the event object
+    console.log('Event type:', event.type);
+    console.log('Target element:', event.target);
+    console.log('Current target element:', event.currentTarget);
+    console.log('Event phase:', event.eventPhase);
+
+    // Preventing the default action (e.g., preventing a link click)
+    event.preventDefault();
+
+    // Stopping the event propagation
+    event.stopPropagation();
+  });
+</script>
+
+<!-- In this example, a click event handler is attached to a button. Inside the event handler function, various properties of the event object are accessed and logged to the console. The preventDefault method is called to prevent the default action of the click event, and stopPropagation is used to stop further propagation of the event. -->
+

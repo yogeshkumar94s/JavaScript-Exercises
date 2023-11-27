@@ -1,0 +1,47 @@
+Load events in JavaScript are triggered when a resource (such as an image, script, or stylesheet) or the entire document has finished loading. These events allow you to execute JavaScript code or perform actions once the content of a page or a specific resource is fully loaded.
+
+There are two main types of load events:
+
+DOMContentLoaded: This event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. It provides an opportunity to interact with the DOM before all external resources are fully loaded.
+
+load: This event is fired when the entire page, including all stylesheets, images, and subframes, has finished loading. It indicates that the entire document and all its resources are ready.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="mainHeading">Waiting for content...</h1>
+
+  <script>
+    // DOMContentLoaded event
+    document.addEventListener('DOMContentLoaded', function() {
+      // This code will run once the initial HTML document is fully loaded and parsed
+      document.getElementById('mainHeading').textContent = 'DOM content loaded';
+    });
+
+    // load event
+    window.addEventListener('load', function() {
+      // This code will run once the entire page, including all resources, is fully loaded
+      document.getElementById('mainHeading').textContent = 'Page fully loaded';
+    });
+  </script>
+
+</body>
+</html>
+
+
+In this example:
+The initial heading (<h1>) is set to "Waiting for content...".
+The DOMContentLoaded event is used to update the heading to "DOM content loaded" once the initial HTML document is fully loaded and parsed.
+The load event is used to update the heading to "Page fully loaded" once the entire page, including all resources, is fully loaded.
+

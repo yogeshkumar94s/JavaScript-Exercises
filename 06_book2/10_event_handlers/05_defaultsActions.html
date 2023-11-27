@@ -1,0 +1,44 @@
+In web development, default actions refer to the standard behavior that browsers apply to certain events. For example, when a user clicks on a link (<a> element), the default action is to navigate to the URL specified in the link's href attribute. Similarly, when a form is submitted, the default action is to send the form data to the server for processing.
+
+In JavaScript event handling, you can use the preventDefault() method to prevent the browser from executing the default action associated with a particular event. This method is available on the event object passed to event handler functions.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preventing Default Actions</title>
+</head>
+<body>
+
+  <a href="https://www.example.com" id="myLink">Visit Example.com</a>
+
+  <form id="myForm">
+    <input type="text" name="username" placeholder="Username">
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    // Preventing the default action of a link
+    const link = document.getElementById('myLink');
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      console.log('Link clicked, but default action prevented.');
+    });
+
+    // Preventing the default action of a form submission
+    const form = document.getElementById('myForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      console.log('Form submitted, but default action prevented.');
+    });
+  </script>
+
+</body>
+</html>
+
+Clicking on the link will trigger the click event, and the event handler prevents the default action (navigating to "https://www.example.com").
+
+Submitting the form will trigger the submit event, and the event handler prevents the default action (submitting the form and navigating to a new page or refreshing the current page).
+
