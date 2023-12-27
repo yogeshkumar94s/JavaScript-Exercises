@@ -1,4 +1,5 @@
 //Q. Explain the concept of type coercion in JavaScript. Provide examples of implicit and explicit type coercion.
+
 //Q. Why does typeof NaN return 'number'? How can you reliably check if a value is NaN in JavaScript?
 //Q. Discuss the representation and usage of Infinity and -Infinity in JavaScript. Provide an example demonstrating their behavior.
 //Q. What is the purpose of the unary plus (+) and unary minus (-) operators in JavaScript? Provide examples of their usage.
