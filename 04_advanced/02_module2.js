@@ -168,3 +168,80 @@ function example5(n) {
 //- The time taken doubles with each additional element in the input, leading to exponential growth.
 
 // 2.4 Recursion
+
+// Recursion is a programming concept where a function calls itself, either directly or indirectly, to solve a smaller instance of the same problem. It's a powerful and elegant technique commonly used in algorithm design and can simplify complex problems by breaking them down into smaller, more manageable subproblems.
+
+// Key Concepts:
+//1.0 Base Case: Every recursive algorithm must have a base case that defines the simplest, smallest instance of the problem that can be solved directly without further recursion.
+
+//2.0 Recursive Case: The algorithm defines how to break down a larger problem into smaller subproblems and combines the solutions to these subproblems to solve the original problem.
+
+// Example 1: Recursive Factorial Function
+function factorial(n) {
+  // Base case
+  if (n <= 1) {
+    return 1;
+  }
+  // Recursive case
+  return n * factorial(n - 1);
+}
+
+// Example usage
+const myNumber = 5;
+console.log(factorial(myNumber));
+
+// Explanation:
+// Base case: If n is 1 or less, return 1.
+// Recursive case: Otherwise, multiply n by the result of calling the factorial function with n - 1.
+// This process continues until the base case is reached.
+
+// Example 2: Recursive Fibonacci Function
+function fibonacci(n) {
+  // Base cases
+  if (n === 0) {
+    return 0;
+  }
+  if (n === 1) {
+    return 1;
+  }
+  // Recursive case
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Example usage
+const myIndex = 6;
+console.log(fibonacci(myIndex));
+
+// Explanation:
+// Base cases: If n is 0 or 1, return 0 or 1, respectively.
+// Recursive case: Otherwise, return the sum of the results of calling the fibonacci function with n - 1 and n - 2.
+
+// Example 3: Recursive Binary Search
+
+function binarySearch(arr, target, left = 0, right = arr.length - 1) {
+  if (left > right) {
+    return -1;
+    // Base case: target not found
+  }
+  const mid = Math.floor((left + right) / 2);
+  if (arr[mid] === target) {
+    return mid;
+    // Base case: target found
+  } else if (arr[mid] < target) {
+    return binarySearch(arr, target, mid + 1, right);
+    // Recursive case: search right half
+  } else {
+    return binarySearch(arr, target, left, mid - 1);
+    // Recursive case: search left half
+  }
+}
+
+// Example usage
+const sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const targetValue1 = 5;
+console.log(binarySearch(sortedArray, targetValue1));
+
+// Explanation:
+// Base cases: If left exceeds right, the target is not found.
+// If the middle element is the target, return its index.
+// Recursive cases: Adjust the search range based on whether the target is greater or less than the middle element.

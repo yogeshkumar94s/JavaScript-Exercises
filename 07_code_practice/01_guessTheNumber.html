@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+
+function generateRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+function startGame() {
+  
+  const minNumber = 1;
+  const maxNumber = 100;
+  
+ 
+  const secretNumber = generateRandomNumber(minNumber, maxNumber);
+  
+  
+  let attempts = 0;
+
+ 
+  function checkGuess(guess) {
+    attempts++;
+
+    if (guess === secretNumber) {
+      console.log(`Congratulations! You guessed the number ${secretNumber} in ${attempts} attempts.`);
+      return true;
+    } else if (guess < secretNumber) {
+      console.log('Too low. Try again!');
+    } else {
+      console.log('Too high. Try again!');
+    }
+
+    return false;
+  }
+
+  
+  while (true) {
+ 
+    const userGuess = prompt(`Guess the number between ${minNumber} and ${maxNumber}:`);
+
+    
+    const guess = parseInt(userGuess);
+
+ 
+    const isCorrect = checkGuess(guess);
+
+   
+    if (isCorrect) {
+      break;
+    }
+  }
+}
+
+// Start the game
+startGame();
+
+        
+    </script>
+</body>
+</html>
