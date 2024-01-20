@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class In JavaScript</title>
+</head>
+<body>
+    
+    <script>
+        // Banking App
+        class BankAccount {
+            constructor(accountNumber, accountHolder, balance) {
+                this.accountNumber = accountNumber;
+                this.accountHolder = accountHolder;
+                this.balance = balance;
+            }
+
+            deposit(amount) {
+                this.balance += amount;
+                console.log(`Deposit of ${amount} successful. New balance is ${this.balance}`)
+            }
+
+            withdraw(amount) {
+                if(amount <= this.balance) {
+                    this.balance -= amount;
+                    console.log(`withdraw of ${amount} successful, New balance is ${this.balance}`)
+                }else{
+                    console.log(`insufficient balance ${this.balance} Please try again`)
+                }
+            }
+
+            getBalance() {
+                console.log(`current balance for ${this.accountHolder} is ${this.balance}`)
+            }
+        }
+
+        class SavingAccount extends BankAccount {
+            constructor(accountNumber, accountHolder, balance, interestRate) {
+                super(accountNumber, accountHolder, balance);
+                this.interestRate = interestRate;
+            }
+
+            calculateInterestRate() {
+               const interest =  this.balance * (this.interestRate / 100);
+               this.balance += interest;
+               console.log(`interest calculated ${interest}. New Balance is ${this.balance}`)
+            }
+
+        }
+
+        class CheckingAccount extends BankAccount {
+            constructor(accountNumber, accountHolder, balance, overdraftLimit) {
+                super(accountNumber, accountHolder, balance);
+                this.overdraftLimit = overdraftLimit;
+            }
+
+            withdraw(amount) {
+                if(amount <= this.balance + this.overdraftLimit) {
+                    this.balance -= amount
+                    console.log(`window of ${amount} successful, new balance is ${this.balance}`)
+                } else {
+                    console.log(`insufficient fund: ${this.balance}`)
+                }
+            }
+        }
+
+        const bankAccount = new BankAccount('abc123', "yogesh", 2500000)
+        bankAccount.deposit(99000);
+        bankAccount.withdraw(10000)
+        bankAccount.getBalance()
+
+        const savingAccount = new SavingAccount("abc1234", "gaurav", 250000, 10)
+        savingAccount.deposit(25000)
+        savingAccount.withdraw(25000)
+        savingAccount.calculateInterestRate()
+        savingAccount.getBalance()
+
+        const checkingAccount = new CheckingAccount("abcd12345", "saurav", 250000, 100000)
+        checkingAccount.deposit(25000)
+        checkingAccount.withdraw(25000)
+        checkingAccount.getBalance()
+
+    </script>
+</body>
+</html>

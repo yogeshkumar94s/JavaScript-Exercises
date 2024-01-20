@@ -1,0 +1,32 @@
+<!-- // Classes in JavaScript were introduced in ECMAScript 6 (ES6) to provide a more structured and object-oriented way to write code. They act as a blueprint for creating objects with shared properties and methods. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class in JavaScript</title>
+   
+</head>
+<body style="background-color: rgb(62, 58, 58);">
+    <script>
+        class Person{
+            constructor(name, profession){
+                this.name = name;
+                this.profession = profession;
+            }
+
+            greet() {
+                console.log(`Hii, ${this.name} How are you. You are a ${this.profession} Right!`)
+            }
+        }
+
+        // creating a instance of Person class
+        const person1 = new Person("yogesh", "web Developer");
+        person1.greet()
+      
+          
+
+
+    </script>
+</body>
+</html>

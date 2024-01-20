@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class | Prototype</title>
+</head>
+<body>
+    <script>
+        
+        // creating a constructor function
+        function Student(name) {
+            this.name = name
+        }
+
+        // adding a method to the prototype
+        Student.prototype.sayHello = function() {
+            console.log(`hii, ${this.name}`)
+        }
+
+        // creating a instance from Student
+        const student1 = new Student("saurav")
+        student1.sayHello()
+        
+
+    </script>
+</body>
+</html>

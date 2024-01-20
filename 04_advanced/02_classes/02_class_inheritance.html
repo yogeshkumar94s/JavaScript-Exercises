@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes in JavaScript</title>
+</head>
+<body>
+
+
+    <script>
+          class Person{
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+
+            greet() {
+                console.log(`Hii, ${this.name} How are you. You are a ${this.age} year old right!`)
+            }
+        }
+        // inheritance
+
+        class Student extends Person {
+            constructor(name, age, grade) {
+                super(name, age);
+                this.grade = grade;
+            }
+
+            study() {
+                console.log(`${this.name} is reading`)
+            }
+          
+        }
+          // creating instance of Student class!
+          const  student1 = new Student("divya", 25, "A");
+          student1.greet()
+          student1.study()
+
+    </script>
+</body>
+</html>
