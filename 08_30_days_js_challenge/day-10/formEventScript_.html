@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form and Dropdown Events</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="myDropdown">Select an option:</label>
+    <select id="myDropdown">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+
+        // Select the form, dropdown, and output div elements
+    const form = document.getElementById('myForm');
+    const dropdown = document.getElementById('myDropdown');
+    const outputDiv = document.getElementById('output');
+
+    // Add a change event listener to the dropdown
+    dropdown.addEventListener('change', (event) => {
+      // Display the selected option value
+      outputDiv.textContent = `Selected option: ${event.target.value}`;
+    });
+
+    // Add a submit event listener to the form
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent the form from submitting the traditional way
+      // Get the selected option value
+      const selectedOption = dropdown.value;
+      // Display a message based on the selected option
+      outputDiv.textContent = `Form submitted with selected option: ${selectedOption}`;
+    });
+
+  </script>
+</body>
+</html>

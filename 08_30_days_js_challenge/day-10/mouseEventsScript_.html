@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events</title>
+  <style>
+    #colorBox {
+      width: 200px;
+      height: 200px;
+      background-color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="colorBox">Hover over me!</div>
+
+  <script >
+      // Select the colorBox element
+      const colorBox = document.getElementById('colorBox');
+
+      // Add a mouseover event listener to the colorBox
+      colorBox.addEventListener('mouseover', () => {
+        // Change the background color on mouseover
+        colorBox.style.backgroundColor = 'lightblue';
+      });
+
+      // Add a mouseout event listener to the colorBox
+      colorBox.addEventListener('mouseout', () => {
+      // Change the background color back to the original on mouseout
+      colorBox.style.backgroundColor = 'lightgray';
+    });
+
+  </script>
+</body>
+</html>

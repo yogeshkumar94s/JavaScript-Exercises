@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events</title>
+  <style>
+    #myBox {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <button id="myButton">Click me</button>
+  <div id="myBox">Hover or Click me</div>
+
+  <script>
+    // Click event
+    const button = document.getElementById('myButton');
+    button.addEventListener('click', () => {
+      console.log('Button clicked!');
+    });
+
+    // Double-click event
+    button.addEventListener('dblclick', () => {
+      console.log('Button double-clicked!');
+    });
+
+    // Mouse over event
+    const box = document.getElementById('myBox');
+    box.addEventListener('mouseover', () => {
+      console.log('Mouse over the box!');
+    });
+
+    // Mouse out event
+    box.addEventListener('mouseout', () => {
+      console.log('Mouse out of the box!');
+    });
+
+    // Mouse down event
+    box.addEventListener('mousedown', () => {
+      console.log('Mouse button pressed down on the box!');
+    });
+
+    // Mouse up event
+    box.addEventListener('mouseup', () => {
+      console.log('Mouse button released over the box!');
+    });
+
+    // Mouse move event
+    box.addEventListener('mousemove', (event) => {
+      console.log(`Mouse moved at (${event.clientX}, ${event.clientY})`);
+    });
+  </script>
+</body>
+</html>

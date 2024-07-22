@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Events</title>
+</head>
+<body>
+  <input type="text" id="inputField" placeholder="Type something...">
+  <div id="log"></div>
+
+  <script>
+
+        // Select the input field and log div elements
+    const inputField = document.getElementById('inputField');
+    const logDiv = document.getElementById('log');
+
+    // Add a keydown event listener to the input field
+    inputField.addEventListener('keydown', (event) => {
+      console.log(`Key down: ${event.key}`);
+      logDiv.textContent = `Key down: ${event.key}`;
+    });
+
+    // Add a keyup event listener to the input field
+    inputField.addEventListener('keyup', (event) => {
+      console.log(`Key up: ${event.key}`);
+      logDiv.textContent = `Key up: ${event.key}, Current value: ${inputField.value}`;
+    });
+
+  </script>
+</body>
+</html>

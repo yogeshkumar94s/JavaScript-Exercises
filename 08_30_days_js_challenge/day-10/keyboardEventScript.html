@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Events</title>
+</head>
+<body>
+  <input type="text" id="inputField" placeholder="Type something">
+  <script>
+    const inputField = document.getElementById('inputField');
+
+    // Key down event
+    inputField.addEventListener('keydown', (event) => {
+      console.log(`Key down: ${event.key}, Code: ${event.code}`);
+    });
+
+    // Key up event
+    inputField.addEventListener('keyup', (event) => {
+      console.log(`Key up: ${event.key}, Code: ${event.code}`);
+    });
+
+    // Key press event
+    inputField.addEventListener('keypress', (event) => {
+      console.log(`Key press: ${event.key}, Code: ${event.code}`);
+    });
+
+    // Example using modifier keys
+    document.addEventListener('keydown', (event) => {
+      if (event.ctrlKey && event.key === 's') {
+        event.preventDefault(); // Prevent the default action (e.g., opening the save dialog in the browser)
+        console.log('Ctrl + S pressed');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegation Example</title>
+  <style>
+    .container {
+      border: 1px solid #000;
+      padding: 20px;
+      width: 300px;
+      min-height: 150px;
+    }
+    .item {
+      background-color: lightblue;
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <h2>Items List</h2>
+  </div>
+  <button id="addItem">Add Item</button>
+
+  <script>
+        // Select the container and button elements
+    const container = document.getElementById('container');
+    const addItemButton = document.getElementById('addItem');
+
+    // Add a click event listener to the container using event delegation
+    container.addEventListener('click', (event) => {
+      if (event.target && event.target.classList.contains('item')) {
+        alert(`Clicked on: ${event.target.textContent}`);
+      }
+    });
+
+    // Add a click event listener to the button to add new items dynamically
+    addItemButton.addEventListener('click', () => {
+      const itemCount = container.children.length;
+      const newItem = document.createElement('div');
+      newItem.className = 'item';
+      newItem.textContent = `Item ${itemCount + 1}`;
+      container.appendChild(newItem);
+    });
+
+  </script>
+</body>
+</html>

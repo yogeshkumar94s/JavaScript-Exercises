@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Events</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('myForm');
+
+    // Form submit event
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent the form from submitting
+      console.log('Form submitted!');
+    });
+
+    // Input change event
+    const emailInput = document.getElementById('email');
+    emailInput.addEventListener('change', (event) => {
+      console.log('Email changed to:', event.target.value);
+    });
+
+    // Input event
+    const nameInput = document.getElementById('name');
+    nameInput.addEventListener('input', (event) => {
+      console.log('Current name input value:', event.target.value);
+    });
+
+    // Focus and blur events
+    const ageInput = document.getElementById('age');
+    ageInput.addEventListener('focus', () => {
+      console.log('Age input field is focused');
+    });
+
+    ageInput.addEventListener('blur', () => {
+      console.log('Age input field lost focus');
+    });
+  </script>
+</body>
+</html>
