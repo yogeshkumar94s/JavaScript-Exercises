@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+</head>
+<body>
+  <div id="parent">
+    <div id="reference">Reference Element</div>
+  </div>
+  <button id="appendChildBtn">Append Child</button>
+  <button id="appendBtn">Append</button>
+  <button id="prependBtn">Prepend</button>
+  <button id="insertBeforeBtn">Insert Before</button>
+
+  <script>
+    // Selecting elements
+    const parentElement = document.getElementById('parent');
+    const referenceElement = document.getElementById('reference');
+
+    // Append Child
+    document.getElementById('appendChildBtn').addEventListener('click', () => {
+      const newElement = document.createElement('div');
+      newElement.textContent = 'Appended using appendChild';
+      parentElement.appendChild(newElement);
+    });
+
+    // Append
+    document.getElementById('appendBtn').addEventListener('click', () => {
+      const newElement = document.createElement('div');
+      newElement.textContent = 'Appended using append';
+      parentElement.append(newElement);
+    });
+
+    // Prepend
+    document.getElementById('prependBtn').addEventListener('click', () => {
+      const newElement = document.createElement('div');
+      newElement.textContent = 'Prepended using prepend';
+      parentElement.prepend(newElement);
+    });
+
+    // Insert Before
+    document.getElementById('insertBeforeBtn').addEventListener('click', () => {
+      const newElement = document.createElement('div');
+      newElement.textContent = 'Inserted using insertBefore';
+      parentElement.insertBefore(newElement, referenceElement);
+    });
+  </script>
+</body>
+</html>

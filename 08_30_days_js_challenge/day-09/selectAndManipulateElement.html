@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div id="myElement" class="myClass">Original Content</div>
+  <button id="changeContent">Change Content</button>
+  <button id="highlight">Highlight</button>
+
+  <script>
+    // Selecting elements
+    const myElement = document.getElementById('myElement');
+    const changeContentButton = document.getElementById('changeContent');
+    const highlightButton = document.getElementById('highlight');
+
+    // Changing content
+    changeContentButton.addEventListener('click', () => {
+      myElement.innerHTML = '<p>New content added!</p>';
+    });
+
+    // Changing styles
+    highlightButton.addEventListener('click', () => {
+      myElement.classList.toggle('highlight');
+    });
+
+    // Changing attributes
+    myElement.setAttribute('data-info', 'Updated information');
+  </script>
+</body>
+</html>

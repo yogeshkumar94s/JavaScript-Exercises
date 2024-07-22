@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modify Attributes and Classes</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+    .active {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <img id="myImage" src="image.jpg" alt="An image">
+  <div id="myElement" class="box">This is a box</div>
+  <button id="changeSrcBtn">Change Image Source</button>
+  <button id="addClassBtn">Add Class</button>
+  <button id="toggleClassBtn">Toggle Class</button>
+
+  <script>
+    // Selecting elements
+    const imageElement = document.getElementById('myImage');
+    const boxElement = document.getElementById('myElement');
+
+    // Change Image Source
+    document.getElementById('changeSrcBtn').addEventListener('click', () => {
+      imageElement.setAttribute('src', 'newImage.jpg');
+      console.log(imageElement.getAttribute('src')); // Check new src value
+    });
+
+    // Add Class
+    document.getElementById('addClassBtn').addEventListener('click', () => {
+      boxElement.classList.add('highlight');
+      console.log(boxElement.className); // Check class list
+    });
+
+    // Toggle Class
+    document.getElementById('toggleClassBtn').addEventListener('click', () => {
+      boxElement.classList.toggle('active');
+      console.log(boxElement.className); // Check class list
+    });
+  </script>
+</body>
+</html>

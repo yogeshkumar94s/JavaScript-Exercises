@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Handling</title>
+  <style>
+    #myBox {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <button id="myButton">Click me</button>
+  <div id="myBox">Hover over me</div>
+  <form id="myForm">
+    <input type="text" placeholder="Type something">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Click event
+    const button = document.getElementById('myButton');
+    button.addEventListener('click', () => {
+      console.log('Button clicked!');
+    });
+
+    // Mouse over event
+    const box = document.getElementById('myBox');
+    box.addEventListener('mouseover', () => {
+      console.log('Mouse over the box!');
+    });
+
+    // Form submit event
+    const form = document.getElementById('myForm');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent the form from submitting
+      console.log('Form submitted!');
+    });
+
+    // Keydown event
+    document.addEventListener('keydown', (event) => {
+      console.log(`Key pressed: ${event.key}`);
+    });
+  </script>
+</body>
+</html>

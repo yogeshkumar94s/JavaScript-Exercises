@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Elements</title>
+</head>
+<body>
+  <div id="parent">
+    <div id="child">Child Element</div>
+    <div id="elementToRemove">Element to Remove</div>
+  </div>
+  <button id="removeChildBtn">Remove Child Element</button>
+  <button id="removeBtn">Remove Element Directly</button>
+  <button id="clearParentBtn">Clear Parent</button>
+
+  <script>
+    // Selecting elements
+    const parentElement = document.getElementById('parent');
+    const childElement = document.getElementById('child');
+    const elementToRemove = document.getElementById('elementToRemove');
+
+    // Remove Child
+    document.getElementById('removeChildBtn').addEventListener('click', () => {
+      if (childElement) {
+        parentElement.removeChild(childElement);
+      }
+    });
+
+    // Remove Element Directly
+    document.getElementById('removeBtn').addEventListener('click', () => {
+      if (elementToRemove) {
+        elementToRemove.remove();
+      }
+    });
+
+    // Clear Parent
+    document.getElementById('clearParentBtn').addEventListener('click', () => {
+      parentElement.innerHTML = '';
+    });
+  </script>
+</body>
+</html>
