@@ -1,4 +1,4 @@
-// there are four logical operator in JavaScript || && ! ??
+// there are four logical operator in JavaScript || OR, && AND,  ! NOT,  ?? NULLISH COALESCING.
 
 // although they are called logical, they can be applied to values of any type, not only boolean. Their result can also be any type.
 
