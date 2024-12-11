@@ -216,5 +216,3 @@ Think of prototypes like blueprints or templates:
 Instead of copying the blueprint for every vehicle, the blueprint is shared and only extended where necessary. This reduces redundancy and improves maintainability.
 
 ---
-
-Let me know if you'd like to dive deeper into any specific concept or example! 😊

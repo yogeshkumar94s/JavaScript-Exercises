@@ -235,5 +235,3 @@ console.log(guest); // Output: User { name: 'Bob', role: 'Guest' }
    Use static members sparingly. If a method relies on instance-specific data, it should not be static.
 
 ---
-
-Let me know if you'd like further examples or deeper exploration of static methods and properties! 😊

@@ -215,7 +215,3 @@ Child.sayHello();
 
 2. **Confusion Between Parent and Subclass Context**:
    Ensure `super` is used correctly when accessing parent methods or constructors.
-
----
-
-Let me know if you'd like to explore more examples or specific use cases! 😊

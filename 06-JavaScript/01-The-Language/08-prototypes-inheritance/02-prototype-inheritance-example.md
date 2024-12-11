@@ -371,5 +371,3 @@ moderator1.moderateComments(); // Output: Eve is moderating comments
 1. **Code Reuse**: Shared functionality (e.g., `listPermissions`) is defined once and reused.
 2. **Flexibility**: Adding new roles or modifying permissions is straightforward.
 3. **Extensibility**: Each role can add its specific methods while still inheriting common behaviors.
-
-Let me know if you'd like further refinements or more examples! 😊

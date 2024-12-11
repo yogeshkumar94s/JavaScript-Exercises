@@ -189,7 +189,3 @@ console.log(Animal.prototype.isPrototypeOf(dog)); // true
 - **Class-based Checks**: When you want to verify if an object is an instance of a specific class or constructor.
 - **Polymorphism**: In scenarios where objects of different types share a common base class.
 - **Type Checking**: To distinguish between different object types (e.g., `Array`, `Date`, etc.).
-
----
-
-Let me know if you’d like further clarification or more examples! 😊

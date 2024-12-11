@@ -232,7 +232,3 @@ const vehicle = new Vehicle(); // Error: Cannot instantiate abstract class Vehic
 
 3. **Prefer Composition Over Inheritance**:
    - In some cases, composition (using objects within a class) is more flexible than inheritance.
-
----
-
-Let me know if you'd like more examples or a deeper explanation of any part! 😊
